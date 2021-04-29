@@ -41,7 +41,7 @@ func getVMsFromConfig(file string) ([]evms.Evm, error) {
 		vms = append(vms, evms.NewNethermindVM(s))
 	}
 	for _, s := range conf.Besu {
-		vms = append(vms, evms.NewBesuVM(s))
+		vms = append(vms, evms.NewBesuBatchVM(s))
 	}
 	for _, s := range conf.OpenEthereum {
 		vms = append(vms, evms.NewParityVM(s))
