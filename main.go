@@ -42,6 +42,7 @@ func initApp() *cli.App {
 	app.Action = mainLoop
 	app.Flags = []cli.Flag{
 		genThreadsFlag,
+		execThreadsFlag,
 		maxTestsFlag,
 		minTestsFlag,
 		buildFlag,
