@@ -202,7 +202,7 @@ func createCorpus(n int) {
 			fmt.Printf("Error while creating corpus: %v\n", err)
 		}
 		filename := sha1.Sum(elem)
-		if err := ioutil.WriteFile(common.Bytes2Hex(filename[:]), elem, 0755); err != nil {
+		if err := ioutil.WriteFile(dir+"/"+common.Bytes2Hex(filename[:]), elem, 0755); err != nil {
 			fmt.Printf("Error while writing corpus element: %v\n", err)
 		}
 	}
