@@ -130,7 +130,7 @@ func generatorLoop(c *cli.Context, exec *executor.Executor) {
 		fmt.Println("Starting generator")
 		cmd := startGenerator(genThreads)
 		go func() {
-			for {
+			//for {
 				// Sleep a bit to ensure some tests have been generated.
 				time.Sleep(30 * time.Second)
 				fmt.Println("Starting executor")
@@ -138,7 +138,7 @@ func generatorLoop(c *cli.Context, exec *executor.Executor) {
 					errChan <- err
 				}
 				errChan <- nil
-			}
+			//}
 		}()
 		go watcher(cmd, errChan, maxTests)
 
